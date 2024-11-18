@@ -2,6 +2,7 @@
 using System.Collections.Immutable;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using Biohazrd;
@@ -48,6 +49,7 @@ else
 string sourceDirectoryPath = Path.GetFullPath(args[0]);
 string mainHeaderFilePath = Path.Combine(sourceDirectoryPath, "imgui.h");
 
+string imGuiBackendsDirectoryPath = Path.Combine(sourceDirectoryPath, "backends");
 string dearImGuiNativeRootPath = Path.GetFullPath(args[1]);
 string imGuiLibFilePath = Path.Combine(dearImGuiNativeRootPath, "..", "bin", "Astra.ImGui.Native", dotNetRid, canonical_build_variant, importLibraryName);
 string imGuiInlineExporterFilePath = Path.Combine(dearImGuiNativeRootPath, "InlineExportHelper.gen.cpp");
@@ -75,6 +77,22 @@ if (!File.Exists(imGuiConfigFilePath))
     return 1;
 }
 
+string[] backendFiles =
+    {
+        "imgui_impl_win32.h",
+        "imgui_impl_win32.cpp",
+        "imgui_impl_dx11.h",
+        "imgui_impl_dx11.cpp"
+    };
+
+// Copy backend files to sourceDirectory temporarily
+foreach (string file in backendFiles)
+{
+    string path = Path.Combine(imGuiBackendsDirectoryPath, file);
+    if (File.Exists(path) == false) continue;
+    File.Copy(path, Path.Combine(sourceDirectoryPath, file), true);
+}
+
 // Create the library
 TranslatedLibraryBuilder libraryBuilder = new()
 {
@@ -91,6 +109,16 @@ libraryBuilder.AddCommandLineArgument($"-I{sourceDirectoryPath}");
 libraryBuilder.AddCommandLineArgument($"-DIMGUI_USER_CONFIG=\"{imGuiConfigFilePath}\"");
 libraryBuilder.AddFile(mainHeaderFilePath);
 libraryBuilder.AddFile(Path.Combine(sourceDirectoryPath, "imgui_internal.h"));
+
+// Include backend header files
+foreach (string file in backendFiles)
+{
+    string path = Path.Combine(sourceDirectoryPath, file);
+    if (file.Contains("loader")) continue;
+    if (File.Exists(path) == false || file.Split('.').Last() != "h") continue;
+    Console.WriteLine("Adding backend header file: " + file);
+    libraryBuilder.AddFile(path);
+}
 
 TranslatedLibrary library = libraryBuilder.Create();
 TranslatedLibraryConstantEvaluator constantEvaluator = libraryBuilder.CreateConstantEvaluator();
@@ -127,7 +155,26 @@ library = new AstraImGuiNamespaceTransformation().Transform(library);
 library = new RemoveIllegalImVectorReferencesTransformation().Transform(library);
 library = new MoveLooseDeclarationsIntoTypesTransformation
 (
-    (c, d) => d.Namespace == "Astra.ImGui" ? "ImGui" : d.Namespace == "Astra.ImGui.Internal" ? "ImGuiInternal" : "Globals"
+    (_, d) =>
+    {
+        if (d.Namespace == "Astra.ImGui")
+        {
+            return "ImGui";
+        }
+        if (d.Namespace == "Astra.ImGui.Internal")
+        {
+            return "ImGuiInternal";
+        }
+        if (d.Namespace == "Astra.ImGui.Backends.Direct3D11")
+        {
+            return "ImGuiImplD3D11";
+        }
+        if (d.Namespace == "Astra.ImGui.Backends.Win32")
+        {
+            return "ImGuiImplWin32";
+        }
+        return "Globals";
+    }
 ).Transform(library);
 library = new AutoNameUnnamedParametersTransformation().Transform(library);
 library = new CreateTrampolinesTransformation()
@@ -196,5 +243,12 @@ diagnostics.AddCategory("Generation Diagnostics", generationDiagnostics, "Genera
 using StreamWriter diagnosticsOutput = outputSession.Open<StreamWriter>("Diagnostics.log");
 diagnostics.WriteOutDiagnostics(diagnosticsOutput, writeToConsole: true);
 
-outputSession.Dispose();
+// Remove copied backend files
+foreach (string file in backendFiles)
+{
+    string path = Path.Combine(sourceDirectoryPath, file);
+    if (File.Exists(path) == false) continue;
+    File.Delete(path);
+}
+
 return 0;

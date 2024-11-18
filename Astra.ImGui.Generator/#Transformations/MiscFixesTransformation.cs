@@ -31,5 +31,22 @@ namespace Astra.ImGui.Generator
             else
             { return declaration; }
         }
+
+        protected override TransformationResult TransformFunction(TransformationContext context, TranslatedFunction declaration)
+        {
+            if (declaration.Name.Contains("ImGui_Impl"))
+            {
+                string cleanedName = declaration.Name.Replace("ImGui_ImplWin32_", "")
+                    .Replace("ImGui_ImplDX9_", "")
+                    .Replace("ImGui_ImplDX10_", "")
+                    .Replace("ImGui_ImplDX11_", "")
+                    .Replace("ImGui_ImplDX12_", "")
+                    .Replace("ImGui_ImplGlfw_", "")
+                    .Replace("ImGui_ImplOpenGL3_", "");
+                return declaration with{ Name = cleanedName };
+            }
+
+            return declaration;
+        }
     }
 }

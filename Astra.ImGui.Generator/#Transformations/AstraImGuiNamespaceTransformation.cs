@@ -45,7 +45,7 @@ namespace Astra.ImGui.Generator
 
             if (Path.GetFileName(declaration.File.FilePath) == "imgui_internal.h")
             { namespaceName += ".Internal"; }
-            else if (Path.GetFileName(Path.GetDirectoryName(declaration.File.FilePath)) == "backends")
+            else if (new FileInfo(declaration.File.FilePath).Name.Contains("_impl_"))
             {
                 namespaceName += ".Backends";
 
