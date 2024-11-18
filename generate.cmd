@@ -10,6 +10,6 @@ if not exist external\imgui\ (
     exit /B 1
 )
 
-:: Run generator (will also build Mochi.DearImGui.Native)
-echo Generating Mochi.DearImGui...
-dotnet run --configuration Release --project Mochi.DearImGui.Generator -- "external/imgui/" "Mochi.DearImGui.Native/" "Mochi.DearImGui/#Generated/"
+:: Run generator (will also build Astra.ImGui.Native)
+echo Generating Astra.ImGui...
+dotnet run --configuration Release --project Astra.ImGui.Generator -- "external/imgui/" "Astra.ImGui.Native/" "Astra.ImGui/#Generated/"

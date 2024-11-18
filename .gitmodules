@@ -4,5 +4,4 @@
 	branch = docking
 [submodule "external/Biohazrd"]
 	path = external/Biohazrd
-	url = https://github.com/MochiLibraries/Biohazrd.git
-	branch = main
+	url = https://github.com/astra-framework/Biohazrd.git

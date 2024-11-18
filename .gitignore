@@ -2,5 +2,5 @@
 /bin/
 /obj/
 /packages/
-/Mochi.DearImGui/#Generated/
-/Mochi.DearImGui.Native/*.gen.*
+/Astra.ImGui/#Generated/
+/Astra.ImGui.Native/*.gen.*
