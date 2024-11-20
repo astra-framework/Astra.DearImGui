@@ -18,6 +18,5 @@
   </Folder>
   <Project Path="Astra.ImGui.Generator\Astra.ImGui.Generator.csproj" />
   <Project Path="Astra.ImGui.Native\Astra.ImGui.Native.csproj" />
-  <Project Path="Astra.ImGui.Ref\Astra.ImGui.Ref.csproj" />
   <Project Path="Astra.ImGui\Astra.ImGui.csproj" />
 </Solution>

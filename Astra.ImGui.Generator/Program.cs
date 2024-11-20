@@ -177,9 +177,9 @@ library = new MoveLooseDeclarationsIntoTypesTransformation
     }
 ).Transform(library);
 library = new AutoNameUnnamedParametersTransformation().Transform(library);
-library = new CreateTrampolinesTransformation()
+library = new CreateTrampolinesTransformation
 {
-    TargetRuntime = TargetRuntime.Net6
+    TargetRuntime = TargetRuntime.Net8
 }.Transform(library);
 library = new ImGuiCreateStringWrappersTransformation().Transform(library);
 library = new StripUnreferencedLazyDeclarationsTransformation().Transform(library);
