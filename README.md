@@ -1,4 +1,4 @@
-# Astra.ImGui
+# Astra.DearImGui
 
 [![MIT Licensed](https://img.shields.io/github/license/mochilibraries/mochi.dearimgui?style=flat-square)](LICENSE.txt)
 [![Sponsor](https://img.shields.io/badge/support_original_creator-%E2%9D%A4-lightgrey?logo=github&style=flat-square)](https://github.com/sponsors/PathogenDavid)

@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Astra.DearImGui.Generator": {
+      "commandName": "Project",
+      "commandLineArgs": "\"$(ProjectDir)../external/imgui/\" \"$(ProjectDir)../Astra.DearImGui.Native/\" \"$(ProjectDir)../Astra.DearImGui/#Generated/\""
+    }
+  }
+}

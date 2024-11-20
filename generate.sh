@@ -9,6 +9,6 @@ if [[ ! -d external/imgui/ ]]; then
     exit 1
 fi
 
-# Run generator (will also build Astra.ImGui.Native)
-echo Generating Astra.ImGui...
-dotnet run --configuration Release --project Astra.ImGui.Generator -- "external/imgui/" "Astra.ImGui.Native/" "Astra.ImGui/#Generated/"
+# Run generator (will also build Astra.DearImGui.Native)
+echo Generating Astra.DearImGui...
+dotnet run --configuration Release --project Astra.DearImGui.Generator -- "external/imgui/" "Astra.DearImGui.Native/" "Astra.DearImGui/#Generated/"

@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\external\Biohazrd\Biohazrd.CSharp\Biohazrd.CSharp.csproj" />
+    <ProjectReference Include="..\external\Biohazrd\Biohazrd.OutputGeneration\Biohazrd.OutputGeneration.csproj" />
+    <ProjectReference Include="..\external\Biohazrd\Biohazrd.Transformation\Biohazrd.Transformation.csproj" />
+    <ProjectReference Include="..\external\Biohazrd\Biohazrd.Utilities\Biohazrd.Utilities.csproj" />
+    <ProjectReference Include="..\external\Biohazrd\Biohazrd\Biohazrd.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Spectre.Console" Version="0.49.1" />
+  </ItemGroup>
+
+</Project>
