@@ -17,6 +17,5 @@
     <File Path="tooling\Common.targets" />
   </Folder>
   <Project Path="Astra.DearImGui.Generator\Astra.DearImGui.Generator.csproj" />
-  <Project Path="Astra.DearImGui.Native\Astra.DearImGui.Native.csproj" />
   <Project Path="Astra.DearImGui\Astra.DearImGui.csproj" />
 </Solution>
