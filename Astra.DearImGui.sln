@@ -1,0 +1,82 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Astra.DearImGui", "Astra.DearImGui\Astra.DearImGui.csproj", "{CE98A846-8631-4C30-B773-0B2723856556}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Astra.DearImGui.Generator", "Astra.DearImGui.Generator\Astra.DearImGui.Generator.csproj", "{C34AA36C-EE2F-43DF-B252-AA51964223DB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "external", "external", "{36352CC3-719F-4AE6-895D-9A377A40DEDC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biohazrd.CSharp", "external\Biohazrd\Biohazrd.CSharp\Biohazrd.CSharp.csproj", "{11F3E765-CC1E-4C77-A52D-2D02210D0CE6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biohazrd.OutputGeneration", "external\Biohazrd\Biohazrd.OutputGeneration\Biohazrd.OutputGeneration.csproj", "{5A2C77C4-25E5-4E8E-B78B-7B212E48EBDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biohazrd.Transformation", "external\Biohazrd\Biohazrd.Transformation\Biohazrd.Transformation.csproj", "{2CC7288E-3A8A-4319-83AF-45F1B88243FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biohazrd.Utilities", "external\Biohazrd\Biohazrd.Utilities\Biohazrd.Utilities.csproj", "{3436430F-08F3-4B7F-99B3-C2D8391ED0D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biohazrd", "external\Biohazrd\Biohazrd\Biohazrd.csproj", "{60971412-E28B-418D-AF29-AF3EF75B0280}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{086E6B4C-BA22-4F32-B6D6-4FD33B1E8FA5}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		Directory.Build.props = Directory.Build.props
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tooling", "tooling", "{84A8FDD6-91EF-4BED-B936-791BED449093}"
+	ProjectSection(SolutionItems) = preProject
+		tooling\Common.csproj.props = tooling\Common.csproj.props
+		tooling\Common.csproj.targets = tooling\Common.csproj.targets
+		tooling\Common.props = tooling\Common.props
+		tooling\Common.targets = tooling\Common.targets
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CE98A846-8631-4C30-B773-0B2723856556}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE98A846-8631-4C30-B773-0B2723856556}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE98A846-8631-4C30-B773-0B2723856556}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE98A846-8631-4C30-B773-0B2723856556}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C34AA36C-EE2F-43DF-B252-AA51964223DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C34AA36C-EE2F-43DF-B252-AA51964223DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C34AA36C-EE2F-43DF-B252-AA51964223DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C34AA36C-EE2F-43DF-B252-AA51964223DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11F3E765-CC1E-4C77-A52D-2D02210D0CE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11F3E765-CC1E-4C77-A52D-2D02210D0CE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11F3E765-CC1E-4C77-A52D-2D02210D0CE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11F3E765-CC1E-4C77-A52D-2D02210D0CE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A2C77C4-25E5-4E8E-B78B-7B212E48EBDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A2C77C4-25E5-4E8E-B78B-7B212E48EBDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A2C77C4-25E5-4E8E-B78B-7B212E48EBDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A2C77C4-25E5-4E8E-B78B-7B212E48EBDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CC7288E-3A8A-4319-83AF-45F1B88243FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CC7288E-3A8A-4319-83AF-45F1B88243FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CC7288E-3A8A-4319-83AF-45F1B88243FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CC7288E-3A8A-4319-83AF-45F1B88243FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3436430F-08F3-4B7F-99B3-C2D8391ED0D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3436430F-08F3-4B7F-99B3-C2D8391ED0D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3436430F-08F3-4B7F-99B3-C2D8391ED0D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3436430F-08F3-4B7F-99B3-C2D8391ED0D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60971412-E28B-418D-AF29-AF3EF75B0280}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60971412-E28B-418D-AF29-AF3EF75B0280}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60971412-E28B-418D-AF29-AF3EF75B0280}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60971412-E28B-418D-AF29-AF3EF75B0280}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{11F3E765-CC1E-4C77-A52D-2D02210D0CE6} = {36352CC3-719F-4AE6-895D-9A377A40DEDC}
+		{5A2C77C4-25E5-4E8E-B78B-7B212E48EBDF} = {36352CC3-719F-4AE6-895D-9A377A40DEDC}
+		{2CC7288E-3A8A-4319-83AF-45F1B88243FC} = {36352CC3-719F-4AE6-895D-9A377A40DEDC}
+		{3436430F-08F3-4B7F-99B3-C2D8391ED0D8} = {36352CC3-719F-4AE6-895D-9A377A40DEDC}
+		{60971412-E28B-418D-AF29-AF3EF75B0280} = {36352CC3-719F-4AE6-895D-9A377A40DEDC}
+		{84A8FDD6-91EF-4BED-B936-791BED449093} = {086E6B4C-BA22-4F32-B6D6-4FD33B1E8FA5}
+	EndGlobalSection
+EndGlobal
