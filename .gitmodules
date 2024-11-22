@@ -1,7 +1,3 @@
-[submodule "external/imgui"]
-	path = external/imgui
-	url = https://github.com/ocornut/imgui.git
-	branch = docking
 [submodule "external/Biohazrd"]
 	path = external/Biohazrd
 	url = https://github.com/astra-framework/Biohazrd.git
