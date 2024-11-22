@@ -1,3 +1,6 @@
 [submodule "external/Biohazrd"]
 	path = external/Biohazrd
 	url = https://github.com/astra-framework/Biohazrd.git
+[submodule "external/imgui"]
+	path = external/imgui
+	url = https://github.com/astra-framework/imgui.git
